@@ -625,14 +625,14 @@ void SessionController::setupCommonActions()
 
     // History
     _findAction = KStandardAction::find(this, SLOT(searchBarEvent()), collection);
-    collection->setDefaultShortcut(_findAction, QKeySequence());
+    collection->setDefaultShortcut(_findAction, Konsole::ACCEL + Qt::SHIFT + Qt::Key_F);
 
     _findNextAction = KStandardAction::findNext(this, SLOT(findNextInHistory()), collection);
-    collection->setDefaultShortcut(_findNextAction, QKeySequence());
+    collection->setDefaultShortcut(_findNextAction, Qt::Key_F3);
     _findNextAction->setEnabled(false);
 
     _findPreviousAction = KStandardAction::findPrev(this, SLOT(findPreviousInHistory()), collection);
-    collection->setDefaultShortcut(_findPreviousAction, QKeySequence());
+    collection->setDefaultShortcut(_findPreviousAction, Qt::SHIFT + Qt::Key_F3);
     _findPreviousAction->setEnabled(false);
 
     // Character Encoding
